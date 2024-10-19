@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/AboutusStyle.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo and Hospital Name -->
+            <div class="logo-and-name">
+                <span class="hospital-name">Treatwell Hospitals</span>
+                <a href="index.html" class="logo">
+                    <img src="Images/Logo.jpg" alt="Hospital Logo">
+                </a>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+    
+            <!-- Navigation Bar -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" class="active">About Us</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Doctors.html">Doctors</a></li>
+                    <li><a href="Reservations.html">Channeling</a></li>
+                    <li><a href="Pharmacy.html">Pharmacy</a></li>
+                </ul>
+            </nav>
+
+            <!-- Dropdown Icon for Mobile -->
+            <div class="dropdown-menu">
+                <img src="Images/dropdownicon.webp" alt="Menu Icon">
+                <div class="dropdown-content">
+                    <a href="index.html">Home</a>
+                    <a href="#" class="active">About Us</a>
+                    <a href="Services.html">Services</a>
+                    <a href="Doctors.html">Doctors</a>
+                    <a href="Reservations.html">Channeling</a>
+                    <a href="Pharmacy.html">Pharmacy</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="branches">
+        <h1>Our Branches</h1>
+
+        <!-- London Branch -->
+        <div class="branch">
+            <h2>London Branch</h2>
+            <div class="branch-details">
+                <div class="branch-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.085650444028!2d-0.18453448769816688!3d51.52998885893523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761aa43da2d407%3A0x83b687253e95710!2s30%20Maida%20Vale%2C%20London%2C%20UK!5e0!3m2!1sen!2slk!4v1729102858202!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="branch-description">
+                    <img src="Images/london.jpg" alt="London Branch">
+                    <p>Our London branch offers comprehensive healthcare services, including emergency care, advanced surgery, maternity services, and pediatric care. We ensure the highest quality care for both routine and complex medical needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liverpool Branch -->
+        <div class="branch">
+            <h2>Liverpool Branch</h2>
+            <div class="branch-details">
+                <div class="branch-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2376.470259839635!2d-2.9299588875992093!3d53.442179467433014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b2220bc1c8717%3A0x9d3f2838472d38aa!2s24%20Lorenzo%20Dr%2C%20Liverpool%20L11%201BE%2C%20UK!5e0!3m2!1sen!2slk!4v1729103086324!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="branch-description">
+                    <img src="Images/liverpool.avif" alt="Liverpool Branch">
+                    <p>The Liverpool branch specializes in oncology, cardiology, and orthopedics. We provide personalized care with state-of-the-art technology and a skilled team of specialists.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manchester Branch -->
+        <div class="branch">
+            <h2>Manchester Branch</h2>
+            <div class="branch-details">
+                <div class="branch-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.028353395387!2d-2.2609757875978804!3d53.46795336550197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb1e36b2765f5%3A0xdc5f7cbd91f46d65!2s205%20City%20Rd%2C%20Greater%2C%20Manchester%20M15%2C%20UK!5e0!3m2!1sen!2slk!4v1729102941090!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="branch-description">
+                    <img src="Images/manchester.avif" alt="Manchester Branch">
+                    <p>Our Manchester branch offers outpatient care, physiotherapy, and dental services. We prioritize quality treatments and personalized care in a comfortable environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="summary-table">
+        <h1>Hospital Summary</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Availability</th>
+                    <th>Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Emergency Services</td>
+                    <td>24/7</td>
+                    <td>London, Liverpool, Manchester</td>
+                </tr>
+                <tr>
+                    <td>Cardiology</td>
+                    <td>Mon-Fri, 9 AM - 5 PM</td>
+                    <td>Liverpool</td>
+                </tr>
+                <tr>
+                    <td>Oncology</td>
+                    <td>Mon-Fri, 9 AM - 6 PM</td>
+                    <td>Liverpool</td>
+                </tr>
+                <tr>
+                    <td>Physiotherapy</td>
+                    <td>Mon-Fri, 9 AM - 6 PM</td>
+                    <td>Manchester</td>
+                </tr>
+                <tr>
+                    <td>Dental Services</td>
+                    <td>Mon-Fri, 9 AM - 6 PM</td>
+                    <td>Manchester</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">For more details, contact our branches directly.</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Left Side: Address and Info -->
+            <div class="footer-address">
+                <h3>About Our Hospital</h3>
+                <p>78 Park Avenue London SW47 2GU</p>
+                <p>We are committed to providing the best healthcare services with state-of-the-art facilities and expert staff.</p>
+            </div>
+            
+            <!-- Right Side: Social Media Links -->
+            <div class="footer-icons">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2024 Treatwell.com All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>

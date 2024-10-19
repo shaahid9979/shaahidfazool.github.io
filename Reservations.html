@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Consulting Reservations</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/Reservations.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo and Hospital Name -->
+            <div class="logo-and-name">
+                <span class="hospital-name">Treatwell Hospitals</span>
+                <a href="index.html" class="logo">
+                    <img src="Images/Logo.jpg" alt="Hospital Logo">
+                </a>
+            </div>
+           <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+    
+            <!-- Navigation Bar -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Doctors.html">Doctors</a></li>
+                    <li><a href="#" class="active">Channeling</a></li>
+                    <li><a href="Pharmacy.html">Pharmacy</a></li>
+                </ul>
+            </nav>
+            <!-- Dropdown Icon for Mobile -->
+            <div class="dropdown-menu">
+                <img src="Images/dropdown_icon.png" alt="Menu Icon">
+                <div class="dropdown-content">
+                    <a href="HomePage.html">Home</a>
+                    <a href="AboutUs.html">About Us</a>
+                    <a href="Services.html">Services</a>
+                    <a href="Doctors.html">Doctors</a>
+                    <a href="#" class="active">Channeling</a>
+                    <a href="Pharmacy.html">Pharmacy</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Consultation Reservation</h2>
+            <form id="consultation-form">
+                <!-- Patient Details -->
+                <div class="form-group">
+                    <label for="name">Patient Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required placeholder="Enter your age">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="branch">Choose a Branch:</label>
+                    <select id="branch" name="branch" required>
+                        <option value="">Select a branch</option>
+                        <option value="London">London</option>
+                        <option value="Liverpool">Liverpool</option>
+                        <option value="Manchester">Manchester</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="consultation-type">Consultation Type:</label>
+                    <select id="consultation-type" name="consultation-type" required>
+                        <option value="" disabled selected>Select type of consultation</option>
+                        <option value="General">General Consultation</option>
+                        <option value="Specialist">Specialist Consultation</option>
+                        <option value="Follow-up">Follow-up Consultation</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Preferred Date:</label>
+                    <input type="date" id="date" name="date" min="" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctor">Preferred Doctor:</label>
+                    <select id="doctor" name="doctor" required>
+                        <option value="" disabled selected>Select a doctor</option>
+                        <option value="Dr. Smith">Dr. John Smith</option>
+                        <option value="Dr. Williams">Dr. Sarah Williams</option>
+                        <option value="Dr. Johnson">Dr. Michael Brown</option>
+                        <option value="Dr. Smith">Dr. Emily Johnson</option>
+                        <option value="Dr. Williams">Dr. Linda White</option>
+                        <option value="Dr. Johnson">Dr. James Green</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" placeholder="Any additional notes or special requirements"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Submit Reservation</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-address">
+                <h3>About Our Hospital</h3>
+                <p>78 Park Avenue London SW47 2GU</p>
+                <p>We are committed to providing the best healthcare services to ensure the well-being of our patients with state-of-the-art facilities and expert staff.</p>
+            </div>
+            
+            <div class="footer-icons">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2024 Treatwell.com All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
