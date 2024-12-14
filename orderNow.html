@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hospital-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+        }
+
+        .navbar ul li a.active {
+            font-weight: bold;
+            color: #0056b3;
+        }
+
+        #order {
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        .order-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .medicines-section {
+            margin-bottom: 20px;
+        }
+
+        .medicines-section h3 {
+            margin-bottom: 10px;
+        }
+
+        .medicines-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .medicines-section ul li {
+            margin-bottom: 5px;
+        }
+
+        .medicines-section ul li button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .medicines-section ul li button:hover {
+            background-color: #0056b3;
+        }
+
+        .order-summary {
+            margin-top: 20px;
+        }
+
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .order-summary th, .order-summary td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .order-summary th {
+            background-color: #f2f2f2;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <link rel="stylesheet" href="Styles/style.css">
+    <script>
+        let cart = [];
+        
+        function addToCart(category, item, price) {
+            const quantity = parseInt(prompt(`Enter quantity for ${item}:`), 10);
+            if (!isNaN(quantity) && quantity > 0) {
+                cart.push({ category, item, price, quantity });
+                updateCartTable();
+            }
+        }
+
+        function updateCartTable() {
+            const tableBody = document.getElementById('cart-table-body');
+            tableBody.innerHTML = '';
+            let total = 0;
+            cart.forEach((product, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${product.category}</td>
+                    <td>${product.item}</td>
+                    <td>${product.quantity}</td>
+                    <td>$${product.price * product.quantity}</td>
+                `;
+                tableBody.appendChild(row);
+                total += product.price * product.quantity;
+            });
+            document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
+        }
+
+        function saveToFavorites() {
+            localStorage.setItem('favoriteOrder', JSON.stringify(cart));
+            alert('Order saved as favorite!');
+        }
+
+        function applyFavorites() {
+            const favorite = JSON.parse(localStorage.getItem('favoriteOrder'));
+            if (favorite) {
+                cart = favorite;
+                updateCartTable();
+            } else {
+                alert('No favorite order found!');
+            }
+        }
+
+        function buyNow() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            localStorage.setItem('currentOrder', JSON.stringify(cart));
+            window.location.href = 'checkout.html'; // Navigate to the checkout page.
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-and-name">
+                <span class="hospital-name">Treatwell Hospitals</span>
+                <a href="#" class="logo">
+                    <img src="/Images/Logo.jpg" alt="Hospital Logo">
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/HomePage.html">Home</a></li>
+                    <li><a href="/AboutUs.html">About Us</a></li>
+                    <li><a href="/Services.html">Services</a></li>
+                    <li><a href="/Doctors.html">Doctors</a></li>
+                    <li><a href="/Reservations.html">Channeling</a></li>
+                    <li><a href="/Pharmacy.html">Pharmacy</a></li>
+                    <li><a href="#" class="active">Order Page</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="order">
+        <div class="order-container">
+            <h2>Place Your Order</h2>
+
+            <div class="medicines-section">
+                <h3>Analgesics</h3>
+                <ul>
+                    <li>Paracetamol ($5) <button onclick="addToCart('Analgesics', 'Paracetamol', 5)">Add</button></li>
+                    <li>Ibuprofen ($8) <button onclick="addToCart('Analgesics', 'Ibuprofen', 8)">Add</button></li>
+                    <li>Aspirin ($4) <button onclick="addToCart('Analgesics', 'Aspirin', 4)">Add</button></li>
+                </ul>
+            </div>
+
+            <div class="medicines-section">
+                <h3>Antibiotics</h3>
+                <ul>
+                    <li>Amoxicillin ($10) <button onclick="addToCart('Antibiotics', 'Amoxicillin', 10)">Add</button></li>
+                    <li>Ciprofloxacin ($15) <button onclick="addToCart('Antibiotics', 'Ciprofloxacin', 15)">Add</button></li>
+                </ul>
+            </div>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Category</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-table-body">
+                        <!-- Cart items will appear here -->
+                    </tbody>
+                </table>
+                <p>Total: <span id="total-price">$0.00</span></p>
+                <div class="buttons">
+                    <button onclick="saveToFavorites()">Add to Favorites</button>
+                    <button onclick="applyFavorites()">Apply Favorites</button>
+                    <button onclick="buyNow()">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
