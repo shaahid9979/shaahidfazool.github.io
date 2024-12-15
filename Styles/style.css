@@ -140,7 +140,7 @@ h1 {
     position: relative;
     width: 100%;
     height: 400px;
-    top: rem;
+    top: 1rem;
 }
 
 #home .slider-container {
